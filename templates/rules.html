@@ -1,0 +1,24 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+<h1>Fishing Tourament</h1>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Rules</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for rule in rules %}
+        {% if rule.apply == 'yes' %}
+          <tr>
+            <td> {{rule.rule}}</td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock %}

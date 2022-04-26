@@ -1,0 +1,37 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+<h1>Judge Page</h1>
+<a href="/judge/add_rules" class="btn btn-primary" role="button">Add Rules</a>
+<a href="approve" class="btn btn-primary" role="button">Verify Entry</a>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Rules</th>
+        <th scope="col">Remove</th>
+        <th scope="col">Apply Rules To Tournament?</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for rule in rules %}
+        <tr>
+          <td> {{rule.rule}}</td>
+          <td>
+            <form action="{{ url_for('remove_button', id=rule['_id']) }}" method="post" >
+              <input type="submit" value = 'remove'/>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('rule_apply_button', id=rule['_id']) }}" method="post" >
+              <input class="btn btn-primary" aria-pressed="true" type="submit" value = 'yes' name="apply"/>
+              <input class="btn btn-primary" aria-pressed="true" type="submit" value = 'no'  name="apply" />
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

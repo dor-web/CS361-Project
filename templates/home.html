@@ -1,0 +1,31 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+<h1>Fishing Tourament</h1>
+<a href="/rules" class="btn btn-primary" role="button">See Rules</a>
+
+</table>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Position</th>
+        <th scope="col">Name</th>
+        <th scope="col">Species</th>
+        <th scope="col">Length</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in entries %}
+        {% if entry.response == 'yes' %}
+          <tr>
+            <td>{{loop.index}}</td>
+            <td> {{entry.name}}</td>
+            <td> {{entry.species}}</td>
+            <td> {{entry.length}}</td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+  </table>
+
+{% endblock %}

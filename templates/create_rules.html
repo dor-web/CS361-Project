@@ -1,0 +1,18 @@
+{% extends 'template.html' %}
+
+{% block content %}
+</head>
+<body>
+    
+        <form action="{{url_for('add_rules')}}"  method="post">
+            <div class="form-group">
+                <label for="rule">Rules: </label>
+                <input type= "text" name="rule"></intput>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </table>
+</body>
+
+
+{% endblock %}
