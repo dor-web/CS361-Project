@@ -1,0 +1,29 @@
+{% extends 'template.html' %}
+
+{% block content %}
+</head>
+<body>
+    
+        <form action="{{url_for('competitor_add_entry')}}"  method="post">
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input type= "text" name="name"></intput>
+                <br>
+                <label for="species">Species: </label>
+                <select name="species">
+                    <option value="Large mounth Bass"> Largemouth bass</option>
+                    <option value="Small mounth Bass"> Smallmouth bass</option>
+                    <option value="Yellow Perch"> Yellow Perch</option>
+                    <option value="Walleye"> Walleye</option>
+                </select>
+                <br>
+                <label for="Length">Length: </label>
+                <input type= "text" name="length"></intput>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </table>
+</body>
+
+
+{% endblock %}

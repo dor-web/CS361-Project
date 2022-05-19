@@ -1,0 +1,30 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+<h1>Competitor Page</h1>
+<a href="/competitor/entry" class="btn btn-primary" role="button">Add Entry</a>
+
+</table>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Species</th>
+        <th scope="col">Length (inches)</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in entries %}
+        <tr>
+          <td> {{entry.name}}</td>
+          <td> {{entry.species}}</td>
+          <td> {{entry.length}}</td>
+        </tr>
+      {% endfor %}
+
+    </tbody>
+</table>
+<!-- <input class="btn btn-primary" type="submit" value="Submit"> -->
+{% endblock %}
