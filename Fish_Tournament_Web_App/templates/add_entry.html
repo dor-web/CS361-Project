@@ -4,12 +4,12 @@
 </head>
 <body>
     
-        <form action="{{url_for('competitor_add_entry')}}"  method="post">
+        <form action="{{url_for('competitor_add_entry')}}"   method="post">
             <div class="form-group">
-                <label for="name">Name: </label>
+                <label for="name" style="float: left;  width: 75;margin-left:35%">Name: </label>
                 <input type= "text" name="name"></intput>
                 <br>
-                <label for="species">Species: </label>
+                <label for="species"style="float: left;  width: 75; margin-left:35%">Species: </label>
                 <select name="species">
                     <option value="Large mounth Bass"> Largemouth bass</option>
                     <option value="Small mounth Bass"> Smallmouth bass</option>
@@ -17,7 +17,7 @@
                     <option value="Walleye"> Walleye</option>
                 </select>
                 <br>
-                <label for="Length">Length: </label>
+                <label for="Length" style="float: left;  width: 75px; margin-left:35%">Length: </label>
                 <input type= "text" name="length"></intput>
                 <button type="submit">Submit</button>
             </div>
